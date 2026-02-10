@@ -24,17 +24,17 @@ const PROFILE = {
 
   projects: [
     {
-      client: "مشروع 01",
+      client: "مشروع ٠١",
       subtitle: "Dashboard / متابعة مهام",
       url: "#"
     },
     {
-      client: "مشروع 02",
+      client: "مشروع ٠٢",
       subtitle: "Automation / تحديث تلقائي",
       url: "#"
     },
     {
-      client: "مشروع 03",
+      client: "مشروع ٠٣",
       subtitle: "Data Quality / توحيد قيم",
       url: "#"
     }

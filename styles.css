@@ -305,18 +305,19 @@ a{color:inherit; text-decoration:none}
   box-shadow: var(--shadow);
   position: relative;
 
-  transform-style: preserve-3d;
-  transition: transform .18s ease, border-color .18s ease;
+  /* ✅ حركة خفيفة */
+  will-change: transform;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, border-color .18s ease;
 }
 
-/* Glow layer controlled by JS variables */
+/* Glow layer (بدون JS) */
 .fx-card::after{
   content:"";
   position:absolute;
   inset:-2px;
   border-radius: inherit;
   background: radial-gradient(
-    260px 260px at var(--mx, 50%) var(--my, 50%),
+    260px 260px at 50% 20%,
     color-mix(in oklab, var(--brand) 35%, transparent),
     transparent 60%
   );
@@ -327,9 +328,16 @@ a{color:inherit; text-decoration:none}
 
 .fx-card:hover::after{ opacity: 1; }
 
-/* hover lift (JS adds tilt; this is base) */
+/* ✅ Hover micro-interactions خفيفة (بدون tilt) */
 .fx-card:hover{
-  border-color: color-mix(in oklab, var(--brand) 25%, rgba(255,255,255,.10));
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--brand) 28%, rgba(255,255,255,.10));
+  box-shadow: 0 26px 90px rgba(0,0,0,.45);
+  filter: brightness(1.02);
+}
+
+.fx-card:active{
+  transform: translateY(-1px);
 }
 
 /* keyboard focus */
@@ -346,6 +354,18 @@ a{color:inherit; text-decoration:none}
 .reveal.in{
   opacity: 1;
   transform: translateY(0);
+}
+
+/* للجوال/اللمس: لا تسوي hover effects */
+@media (hover: none){
+  .fx-card:hover{
+    transform: none;
+    box-shadow: var(--shadow);
+    filter: none;
+  }
+  .fx-card:hover::after{
+    opacity: 0;
+  }
 }
 
 .profile-card{position:sticky; top:88px}

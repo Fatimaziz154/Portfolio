@@ -158,61 +158,8 @@ function setTheme(t) {
 /* ===========================
    8) Micro-interactions + Scroll reveal
    =========================== */
-initCardMicroInteractions();
 initReveal();
 
-/* ---------- Micro-interactions: tilt + glow ---------- */
-function initCardMicroInteractions() {
-  const cards = Array.from(document.querySelectorAll(".fx-card"));
-
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReduced) return;
-
-  cards.forEach((card) => {
-    card.style.setProperty("--mx", "50%");
-    card.style.setProperty("--my", "50%");
-
-    let raf = null;
-
-    const onMove = (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const mx = (x / rect.width) * 100;
-      const my = (y / rect.height) * 100;
-
-      const px = x / rect.width - 0.5;
-      const py = y / rect.height - 0.5;
-
-      const tiltX = (py * -6).toFixed(2);
-      const tiltY = (px * 6).toFixed(2);
-
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        card.style.setProperty("--mx", `${mx}%`);
-        card.style.setProperty("--my", `${my}%`);
-        card.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-2px)`;
-      });
-    };
-
-    const onEnter = () => {
-      card.style.willChange = "transform";
-    };
-
-    const onLeave = () => {
-      if (raf) cancelAnimationFrame(raf);
-      card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
-      card.style.willChange = "auto";
-      card.style.setProperty("--mx", "50%");
-      card.style.setProperty("--my", "50%");
-    };
-
-    card.addEventListener("mouseenter", onEnter);
-    card.addEventListener("mousemove", onMove);
-    card.addEventListener("mouseleave", onLeave);
-  });
-}
 
 /* ---------- Scroll reveal ---------- */
 function initReveal() {

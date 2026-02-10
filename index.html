@@ -3,52 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>فاطمة عبدالعزيز السعيد | Portfolio</title>
-    <meta
-      name="description"
-      content="بورتفوليو فاطمة عبدالعزيز السعيد — معلوماتية صحية، لوحات مؤشرات، أتمتة، وتحليل بيانات."
-    />
+    <title>فاطمة عبدالعزيز السعيد — Portfolio</title>
+    <meta name="description" content="Portfolio — فاطمة عبدالعزيز السعيد" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <a class="skip-link" href="#top">تخطي إلى المحتوى</a>
-
-    <!-- خلفية الهوية -->
-    <div class="fx-bg" aria-hidden="true">
+    <!-- خلفية/ديكور (بدون صور خارجية) -->
+    <div class="fx" aria-hidden="true">
       <span class="orb o1"></span>
       <span class="orb o2"></span>
       <span class="orb o3"></span>
       <span class="grid"></span>
-      <span class="signature"></span>
+      <span class="sig">FATIMAH</span>
     </div>
 
-    <header class="header">
-      <div class="container nav">
+    <!-- شريط علوي -->
+    <header class="topbar">
+      <div class="wrap topbar-inner">
         <a class="brand" href="#top" aria-label="العودة للأعلى">
-          <span class="brand-mark" aria-hidden="true">ف</span>
-          <span id="brandName">فاطمة عبدالعزيز السعيد</span>
+          <span class="mark">ف</span>
+          <span id="brandName">اسمك هنا</span>
         </a>
 
-        <nav class="menu" aria-label="القائمة">
+        <nav class="nav" aria-label="القائمة">
           <a href="#about">نبذة</a>
-          <a href="#highlights">إنجازات</a>
-          <a href="#featured">أعمال مميزة</a>
+          <a href="#services">الخدمات</a>
           <a href="#projects">المشاريع</a>
-          <a href="#experience">الخبرة</a>
+          <a href="#testimonials">آراء</a>
           <a href="#contact">تواصل</a>
+          <a class="btn ghost" id="cvLink" href="assets/Fatimah-CV.pdf" target="_blank" rel="noreferrer">تحميل السيرة</a>
         </nav>
 
         <div class="actions">
-          <a class="btn btn-ghost" href="assets/Fatimah-CV.pdf" target="_blank" rel="noreferrer">
-            تحميل السيرة الذاتية
-          </a>
-
-          <button id="themeBtn" class="btn btn-ghost" type="button" aria-label="تبديل الوضع">
-            الوضع: <span id="themeLabel">داكن</span>
-          </button>
-
-          <a class="btn" href="#contact">تواصل معي</a>
+          <button class="btn ghost" id="themeBtn" type="button">الوضع: <span id="themeLabel">داكن</span></button>
+          <button class="btn" id="copyEmailBtn" type="button">نسخ الإيميل</button>
         </div>
       </div>
     </header>
@@ -56,270 +45,203 @@
     <main id="top">
       <!-- HERO -->
       <section class="hero">
-        <div class="container hero-grid">
-          <div>
-            <p class="badge">👋 أهلًا، أنا</p>
+        <div class="wrap hero-grid">
+          <!-- نص -->
+          <div class="hero-copy reveal">
+            <p class="kicker">PORTFOLIO · HEALTH INFORMATICS</p>
 
-            <h1 class="title">
-              <span id="heroName">فاطمة عبدالعزيز السعيد</span>
-              <span class="title-sub">— معلوماتية صحية | لوحات مؤشرات وأتمتة</span>
+            <h1 class="h1">
+              <span class="big-back" aria-hidden="true" id="heroBack">مرحبًا، أنا فاطمة</span>
+              <span class="name" id="heroName">فاطمة عبدالعزيز السعيد</span>
+              <span class="sub" id="heroTagline">لوحات مؤشرات · أتمتة · تحليل بيانات</span>
             </h1>
 
             <p class="lead" id="heroBio">
-              سنة امتياز في المعلوماتية الصحية، وقائدة في منصة المعلوماتية الصحية بالعربي.
-              أُحوّل البيانات إلى لوحات واضحة وأتمتة تقلّل الوقت وترفع جودة القرار.
+              سنة امتياز في المعلوماتية الصحية—أبني حلولًا رقمية تُبسّط سير العمل وتدعم القرار.
             </p>
 
             <div class="hero-cta">
-              <a class="btn" href="#featured">أعمالي المميزة</a>
-              <a class="btn btn-ghost" href="#projects">كل المشاريع</a>
-              <button id="copyEmailBtn" class="btn btn-ghost" type="button">نسخ الإيميل</button>
+              <a class="pill-btn" href="#projects">مشاهدة المشاريع</a>
+              <a class="pill-btn ghost" href="#contact">تواصل معي</a>
             </div>
 
-            <div class="hero-meta">
-              <span class="meta-pill">🎓 سنة امتياز — معلوماتية صحية</span>
-              <span class="meta-pill">👑 قائدة — منصة المعلوماتية الصحية بالعربي</span>
-              <span class="meta-pill">📍 السعودية</span>
+            <div class="meta-row">
+              <span class="meta-pill" id="pillRole">سنة امتياز</span>
+              <span class="meta-pill" id="pillLead">قائدة — منصة المعلوماتية الصحية بالعربي</span>
+              <span class="meta-pill" id="pillLoc">السعودية</span>
             </div>
           </div>
 
-          <aside class="card profile-card fx-card" aria-label="بطاقة تعريف">
-            <div class="avatar" aria-hidden="true">ف</div>
+          <!-- صورة/Avatar -->
+          <aside class="hero-face reveal" aria-label="صورة شخصية">
+            <div class="face">
+              <!-- ضعي صورتك لاحقًا هنا: assets/profile.jpg -->
+              <img id="profileImg" src="assets/profile.jpg" alt="صورة فاطمة" />
+              <span class="fallback" id="profileInitials" aria-hidden="true">ف</span>
+            </div>
 
-            <h2 class="card-title" id="cardName">فاطمة عبدالعزيز السعيد</h2>
-            <p class="card-sub" id="cardRole">سنة سادسة (سنة امتياز) — تخصص المعلوماتية الصحية</p>
-
-            <div class="card-list">
+            <div class="mini-card">
               <div class="row">
-                <span>البريد</span>
-                <span class="mono" id="emailText">fatiziz154@email.com</span>
+                <span class="muted">البريد</span>
+                <span class="mono" id="emailText">email</span>
               </div>
-
               <div class="row">
-                <span>روابط</span>
+                <span class="muted">روابط</span>
                 <span class="links">
-                  <a href="#" id="githubLink" target="_blank" rel="noreferrer">GitHub</a>
-                  <a href="#" id="linkedinLink" target="_blank" rel="noreferrer">LinkedIn</a>
+                  <a id="githubLink" href="#" target="_blank" rel="noreferrer">GitHub</a>
+                  <a id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
                 </span>
               </div>
             </div>
 
-            <a class="btn btn-wide" href="#contact">راسلني</a>
+            <a class="pill-btn wide" href="#contact">راسليني</a>
           </aside>
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="h2">نبذة</h2>
-            <p class="muted">ملخص سريع يساعد مسؤول التوظيف يفهمك خلال 10 ثواني.</p>
+      <!-- ABOUT (نفس فكرة الفيديو: شريط صور أعلى + عنوان Outline كبير) -->
+      <section id="about" class="section dark">
+        <div class="wrap reveal">
+          <div class="strip" aria-label="شريط أعمال">
+            <div class="strip-item s1"></div>
+            <div class="strip-item s2"></div>
+            <div class="strip-item s3"></div>
+            <div class="strip-item s4"></div>
           </div>
 
-          <div class="grid-2">
-            <div class="card fx-card">
-              <h3 class="h3">من أنا</h3>
+          <div class="about-body">
+            <div>
+              <h2 class="h2">نبذة مختصرة</h2>
               <p class="text" id="aboutText">
-                أعمل على بناء حلول رقمية في المعلوماتية الصحية: لوحات مؤشرات، تحليل بيانات، وأتمتة تقارير.
-                تركيزي على وضوح المؤشرات، جودة البيانات، وتجربة المستخدم.
+                أعمل على مبادرات معرفية ومحتوى/مشاريع ضمن منصة المعلوماتية الصحية بالعربي، إلى جانب مشاريعي الأكاديمية والتطبيقية. أركز على لوحات المؤشرات، الأتمتة، وتحسين جودة البيانات.
               </p>
-            </div>
 
-            <div class="card fx-card">
-              <h3 class="h3">ما أقدمه</h3>
-              <ul class="list">
-                <li>لوحات مؤشرات (KPI) في Looker Studio لعرض الأداء بوضوح.</li>
-                <li>أتمتة في Google Sheets / Apps Script لتقليل العمل اليدوي.</li>
-                <li>توثيق مؤشرات وتعريفات البيانات لضمان الاتساق.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HIGHLIGHTS -->
-      <section id="highlights" class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="h2">إنجازات مختصرة</h2>
-            <p class="muted">عدّلي الأرقام لاحقًا — حتى أرقام بسيطة ترفع الاحترافية.</p>
-          </div>
-
-          <div class="grid-3">
-            <div class="card stat fx-card">
-              <p class="stat-num">+3</p>
-              <p class="stat-label">لوحات مؤشرات</p>
-              <p class="muted tiny">KPI / متابعة مهام / تقارير تشغيلية</p>
-            </div>
-
-            <div class="card stat fx-card">
-              <p class="stat-num">-50%</p>
-              <p class="stat-label">تقليل وقت إعداد تقرير</p>
-              <p class="muted tiny">بواسطة أتمتة وتجميع بيانات</p>
-            </div>
-
-            <div class="card stat fx-card">
-              <p class="stat-num">+1</p>
-              <p class="stat-label">قيادة مبادرة معرفية</p>
-              <p class="muted tiny">ضمن منصة المعلوماتية الصحية بالعربي</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="h2">مهارات</h2>
-            <p class="muted">قائمة مركزة — الأفضل تربطينها بمشاريع فعلية.</p>
-          </div>
-
-          <div class="chips" id="skillsChips"></div>
-        </div>
-      </section>
-
-      <!-- FEATURED -->
-      <section id="featured" class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="h2">أعمال مميزة</h2>
-            <p class="muted">اختاري 2–3 مشاريع قوية (الأفضل قبل كل شيء).</p>
-          </div>
-
-          <div class="grid-2">
-            <article class="card project fx-card">
-              <div class="project-top">
-                <h3 class="h3">Dashboard لمتابعة الامتثال</h3>
-                <span class="pill">Looker Studio</span>
-                <span class="pill">Google Sheets</span>
-              </div>
-              <p class="muted">
-                الهدف: عرض مؤشرات الامتثال بشكل واضح مع فلترة حسب النطاق/القسم وتتبّع الحالات.
-              </p>
-              <ul class="mini">
-                <li><b>الدور:</b> بناء النموذج وتجميع البيانات وتصميم اللوحة.</li>
-                <li><b>الأثر:</b> تقليل الوقت وتحسين وضوح المتابعة.</li>
-              </ul>
-              <a href="#" target="_blank" rel="noreferrer">عرض المشروع →</a>
-            </article>
-
-            <article class="card project fx-card">
-              <div class="project-top">
-                <h3 class="h3">أتمتة تقارير وشهادات</h3>
-                <span class="pill">Apps Script</span>
-                <span class="pill">PDF</span>
-              </div>
-              <p class="muted">
-                الهدف: توليد ملفات تلقائيًا (قالب + إخراج) وربطها بسير عمل واضح.
-              </p>
-              <ul class="mini">
-                <li><b>الدور:</b> تصميم سير العمل والتوليد الآلي والتحقق.</li>
-                <li><b>الأثر:</b> تقليل العمل اليدوي والأخطاء.</li>
-              </ul>
-              <a href="#" target="_blank" rel="noreferrer">عرض المشروع →</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="h2">كل المشاريع</h2>
-            <p class="muted">يتم تعبئتها من script.js (سهلة الإضافة).</p>
-          </div>
-
-          <div class="grid-2" id="projectsGrid"></div>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section id="experience" class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <h2 class="h2">الخبرة والقيادة</h2>
-            <p class="muted">مسؤولية + تأثير + تعاون = انطباع توظيف قوي.</p>
-          </div>
-
-          <div class="grid-2">
-            <div class="card fx-card">
-              <h3 class="h3">قائدة — منصة المعلوماتية الصحية بالعربي</h3>
-              <p class="muted">
-                قيادة مبادرات معرفية وتنظيم محتوى/مشاريع تهدف لتبسيط مفاهيم المعلوماتية الصحية ونشرها.
-              </p>
-              <ul class="list">
-                <li>تنسيق أعمال ومخرجات، وتوحيد أسلوب العرض.</li>
-                <li>تحويل أفكار إلى مواد قابلة للنشر (أدلة/كتيبات/محتوى).</li>
+              <ul class="bullets">
+                <li>تحويل الاحتياج إلى مؤشرات قابلة للقياس.</li>
+                <li>توحيد البيانات وتقليل الإدخال اليدوي.</li>
+                <li>تصميم واجهات واضحة “تُفهم بسرعة” للتوظيف.</li>
               </ul>
             </div>
 
-            <div class="card fx-card">
-              <h3 class="h3">التعليم</h3>
-              <p class="muted">معلوماتية صحية — سنة سادسة (سنة امتياز)</p>
-              <hr class="sep" />
-              <h3 class="h3">شهادات (اختياري)</h3>
-              <ul class="list">
-                <li>ضعي شهاداتك هنا (BI/Analytics/Privacy...)</li>
-                <li>ضعي رابط إثبات إن وجد.</li>
-              </ul>
+            <div class="decor" aria-hidden="true">
+              <span class="shape heart"></span>
+              <span class="shape flower"></span>
+              <span class="shape gem"></span>
             </div>
+          </div>
+
+          <div class="outline-title" aria-hidden="true">نبذة عني</div>
+        </div>
+      </section>
+
+      <!-- SERVICES (مثل الفيديو: نص + زر ثم تحتها لوحة فاتحة) -->
+      <section id="services" class="section dark">
+        <div class="wrap reveal center-block">
+          <p class="center-text">
+            أقدّم حلولًا تركّز على <b>تبسيط سير العمل</b> ورفع <b>جودة القرار</b> عبر لوحات مؤشرات ذكية وأتمتة تقارير وتنظيم البيانات.
+            <br />
+            دعينا نبني شيئًا “واضحًا ومقنعًا” لمسؤول التوظيف خلال ثوانٍ.
+          </p>
+          <a class="pill-btn" href="#contact">تواصل معي</a>
+        </div>
+
+        <div class="wrap services-panel reveal" aria-label="الخدمات">
+          <div class="panel-head">
+            <div class="panel-title">الخدمات</div>
+            <div class="panel-sub muted">قائمة مختصرة بنفس أسلوب الفيديو (أرقام كبيرة + وصف).</div>
+          </div>
+
+          <div class="svc-list" id="servicesList">
+            <!-- JS -->
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="section">
-        <div class="container contact-grid">
-          <div>
-            <h2 class="h2">تواصل</h2>
-            <p class="text">
-              للتعاون أو فرص التدريب/الوظائف أو أي استفسار — يسعدني التواصل والرد بأقرب وقت.
-            </p>
+      <!-- PROJECTS (مثل الفيديو: عنوان ضخم + قائمة صفوف مع زر + صور) -->
+      <section id="projects" class="section dark">
+        <div class="wrap reveal">
+          <h2 class="projects-title">المشاريع</h2>
 
-            <div class="card fx-card">
-              <div class="row">
-                <span>البريد</span>
-                <span class="mono" id="emailText2">fatiziz154@email.com</span>
-              </div>
-              <div class="row">
-                <span>واتساب</span>
-                <span class="mono" id="whatsText">+966566577808</span>
-              </div>
-            </div>
+          <div class="project-board" id="projectsBoard">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="testimonials" class="section dark">
+        <div class="wrap reveal">
+          <div class="test-head">
+            <h2 class="h2">آراء العملاء / الزملاء</h2>
+            <p class="muted">ضيفي 3–8 شهادات قصيرة—تفرق كثير بالتوظيف.</p>
           </div>
 
-          <form class="card form fx-card" id="contactForm">
+          <div class="test-grid" id="testimonialsGrid">
+            <!-- JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT (مثل الفيديو: جزء فاتح ثم Footer داكن) -->
+      <section id="contact" class="section light">
+        <div class="wrap contact-top reveal">
+          <div class="contact-title">
+            <h2 class="h1-lite">تواصل</h2>
+            <p class="mono email-big" id="emailBig">fatimah@email.com</p>
+            <p class="muted">جاهزة لفرصة تدريب/توظيف أو تعاون على مشروع.</p>
+          </div>
+
+          <form class="contact-form" id="contactForm">
             <label>
               الاسم
-              <input name="name" type="text" placeholder="اسمك" required />
+              <input name="name" type="text" required placeholder="اسمك" />
             </label>
-
             <label>
               البريد
-              <input name="email" type="email" placeholder="name@email.com" required />
+              <input name="email" type="email" required placeholder="name@email.com" />
             </label>
-
             <label>
               الرسالة
-              <textarea name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+              <textarea name="message" rows="5" required placeholder="اكتب/ي رسالتك..."></textarea>
             </label>
 
-            <button class="btn btn-wide" type="submit">إرسال</button>
-            <p class="muted tiny">* النموذج يفتح برنامج البريد للإرسال (بدون سيرفر).</p>
+            <button class="pill-btn" type="submit">إرسال</button>
+            <p class="tiny muted">* يفتح برنامج البريد (بدون سيرفر).</p>
           </form>
         </div>
+
+        <footer class="footer dark">
+          <div class="wrap footer-inner">
+            <div class="footer-left">
+              <div class="footer-name" id="footerName">فاطمة</div>
+              <div class="footer-outline" aria-hidden="true" id="footerOutline">FATIMAH</div>
+            </div>
+
+            <div class="footer-cols">
+              <div>
+                <div class="col-title">SOCIAL</div>
+                <a class="col-link" id="fLinkedin" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a class="col-link" id="fGithub" href="#" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+
+              <div>
+                <div class="col-title">CONTACT</div>
+                <div class="col-text mono" id="fEmail">email</div>
+                <div class="col-text mono" id="fWhats">+966</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shape-row" aria-hidden="true">
+            <span class="blob b1"></span>
+            <span class="blob b2"></span>
+            <span class="blob b3"></span>
+            <span class="blob b4"></span>
+            <span class="blob b5"></span>
+          </div>
+        </footer>
       </section>
     </main>
-
-    <footer class="footer">
-      <div class="container footer-inner">
-        <span class="muted">© <span id="year"></span> <span id="footerName">فاطمة عبدالعزيز السعيد</span></span>
-        <a class="muted" href="#top">للأعلى ↑</a>
-      </div>
-    </footer>
 
     <script src="script.js"></script>
   </body>
